@@ -1,0 +1,28 @@
+﻿@model UserViewModel
+
+@{
+    ViewBag.Title = "User";
+}
+
+<h2>User</h2>
+
+@using (Html.BeginForm("Save", "User", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.Partial("ValidationSummary", ViewData.ModelState)
+
+    <div class="row">
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Age)
+        @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+    </div>
+</div>
+    <div class="row">
+        <button type="submit" id="save" class="btn btn-primary">Save</button>
+    </div>
+}

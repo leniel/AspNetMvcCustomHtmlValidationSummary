@@ -1,0 +1,15 @@
+﻿@model ModelStateDictionary
+
+<div class="validation-summary-valid panel panel-danger" data-valmsg-summary="true">
+    <div class="panel-heading">
+       Please, correct the following errors:
+    </div>
+    <div class="panel-body">
+        <ul>
+            @foreach (var modelError in Model.SelectMany(keyValuePair => keyValuePair.Value.Errors))
+            {
+                <li>@modelError.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+</div>
